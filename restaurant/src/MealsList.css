@@ -1,0 +1,41 @@
+.meals {
+  width: 90%;
+  max-width: 40rem;
+  margin: 2rem auto;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  padding: 1rem;
+}
+
+.meals ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.meal-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.meal-item:last-child {
+  border-bottom: none;
+}
+
+.meal-item h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.meal-item .description {
+  font-style: italic;
+  color: #888;
+}
+
+.meal-item .price {
+  font-weight: bold;
+  color: #8a2b06;
+}

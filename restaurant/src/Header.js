@@ -1,7 +1,6 @@
-// Header.js
 import React from 'react';
 import './Header.css';
-import mealsImage from './restaurant.jpg';
+import mealsImage from './restaurant.jpg'; 
 
 const Header = () => {
   return (
@@ -14,13 +13,10 @@ const Header = () => {
         </button>
       </header>
       <div className="main-image">
-        <img
-          src={mealsImage} 
-          alt="A table full of delicious food"
-        />
+        <img src={mealsImage} alt="A table full of delicious food" />
       </div>
     </>
   );
 };
 
-export default Header;
+export default Header; 
