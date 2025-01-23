@@ -1,0 +1,48 @@
+
+.meal-form {
+    display: flex;
+    align-items: center;
+  }
+  
+ 
+  .form-control {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+  }
+  
+  .form-control label {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+    color: #8a2b06;
+  }
+  
+  .form-control input {
+    width: 3rem;
+    font: inherit;
+    padding: 0.25rem;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+  }
+  
+  /* Add Button */
+  .meal-form button {
+    font: inherit;
+    cursor: pointer;
+    background-color: #8a2b06;
+    border: 1px solid #8a2b06;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  
+  .meal-form button:hover,
+  .meal-form button:active {
+    background-color: #641e03;
+    border-color: #641e03;
+  }
+  
