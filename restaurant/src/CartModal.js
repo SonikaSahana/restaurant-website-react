@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import './CartModal.css'; 
+import './CartModal.css';
 
 // Backdrop Component
 const Backdrop = ({ onClose }) => {
-  return <div className="backdrop" onClick={onClose}></div>;
+  return <div className="backdrop" onClick={onClose}></div>;  // Clicking backdrop closes modal
 };
 
 // ModalOverlay Component
@@ -38,31 +38,14 @@ const ModalOverlay = ({ onClose }) => {
   );
 };
 
-// Cart Component
-const Cart = () => {
-  // State to control whether the cart modal is open or closed
-  const [isOpen, setIsOpen] = useState(false);
-
-  // Function to toggle cart modal visibility
-  const toggleCart = () => {
-    setIsOpen(!isOpen);
-  };
-
+// CartModal Component
+const CartModal = ({ onClose }) => {
   return (
-    <div>
-      {/* Cart Icon - clicking this opens the modal */}
-      <button onClick={toggleCart}>🛒 Open Cart</button>
-
-      {/* Cart Modal Logic */}
-      {isOpen && (
-        <>
-          {/* React portal to render the Backdrop and ModalOverlay outside the regular component tree */}
-          {ReactDOM.createPortal(<Backdrop onClose={toggleCart} />, document.getElementById('overlays'))}
-          {ReactDOM.createPortal(<ModalOverlay onClose={toggleCart} />, document.getElementById('overlays'))}
-        </>
-      )}
-    </div>
+    <>
+      {ReactDOM.createPortal(<Backdrop onClose={onClose} />, document.getElementById('overlays'))}
+      {ReactDOM.createPortal(<ModalOverlay onClose={onClose} />, document.getElementById('overlays'))}
+    </>
   );
 };
 
-export default Cart;
+export default CartModal;
