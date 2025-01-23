@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Header.css';
-import mealsImage from './restaurant.jpg'; 
+import mealsImage from './restaurant.jpg';
+import CartContext from './store/CartContext'; 
 
-const Header = ({ onCartClick }) => {  // Receive `onCartClick` as prop
+
+const Header = ({ onCartClick }) => {
+  const cartCtx = useContext(CartContext); 
+
+  const numberOfCartItems = cartCtx.items.reduce((total, item) => {
+    return total + item.amount;
+  }, 0);
+
   return (
     <>
       <header className="header">
         <h1>ReactMeals</h1>
-        <button className="cart-button" onClick={onCartClick}>  {/* Trigger onCartClick to open modal */}
+        <button className="cart-button" onClick={onCartClick}>
           <span>Your Cart</span>
-          <span className="cart-count">0</span>
+          <span className="cart-count">{numberOfCartItems}</span> 
         </button>
       </header>
       <div className="main-image">

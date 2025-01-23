@@ -1,23 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
+import CartContext from "./store/CartContext"; 
 import "./MealsItemForm.css";
 
-const MealItemForm = () => {
+const MealItem = ({ id, name, description, price }) => {
+  const cartCtx = useContext(CartContext);
+
+  const addToCartHandler = () => {
+    cartCtx.addItem({
+      id,
+      name,
+      price,
+      amount: 1,
+    });
+  };
+
   return (
-    <form className="meal-form">
-      <div className="form-control">
-        <label htmlFor="amount">Amount</label>
-        <input
-          id="amount"
-          type="number"
-          min="1"
-          max="5"
-          step="1"
-          defaultValue="1"
-        />
+    <li className="meal-item">
+      <div>
+        <h3>{name}</h3>
+        <p>{description}</p>
+        <p>${price.toFixed(2)}</p>
       </div>
-      <button type="button">+ Add</button>
-    </form>
+      <button onClick={addToCartHandler}>+ Add</button> 
+    </li>
   );
 };
 
-export default MealItemForm;
+export default MealItem;
