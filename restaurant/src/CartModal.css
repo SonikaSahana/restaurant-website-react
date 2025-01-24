@@ -1,48 +1,113 @@
+/* Ensure modal has proper padding and space */
+.modal {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 100;
+  width: 40rem;
+  max-width: 90%;
+  max-height: 70%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
 
+/* Cart item display fix */
+.content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  flex-grow: 1;
+  max-height: 300px; /* Limit the height of cart items */
+  border-bottom: 1px solid #ccc; 
+}
 
-.backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); 
-    z-index: 10;
-  }
-  
-  .modal {
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%); 
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
-    z-index: 100; 
-  }
-  
-  .actions {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  
-  .button,
-  .button-alt {
-    padding: 10px 15px;
-    cursor: pointer;
-  }
-  
-  .button {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-  }
-  
-  .button-alt {
-    background-color: #f44336;
-    color: white;
-    border: none;
-  }
-  
+.content ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Remove button styling */
+.remove-button {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: inline-block; /* Ensure it's visible */
+}
+
+.remove-button:hover {
+  background: #ff1a1a;
+}
+/* Button styles */
+.button {
+  background-color: #8a2b06;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+  min-width: 120px; /* Ensure buttons have enough width */
+}
+
+.button:hover,
+.button:active {
+  background-color: #5a1a01;
+}
+
+/* Style for Close button */
+.button-alt {
+  background: none;
+  border: 2px solid #8a2b06;
+  color: #8a2b06;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+/* Close button hover */
+.button-alt:hover,
+.button-alt:active {
+  background-color: #8a2b06;
+  color: white;
+}
+
+/* Footer actions (Close and Order buttons) */
+.actions {
+  background: white;
+  position: sticky; /* Keeps it visible at the bottom */
+  bottom: 0;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #ccc;
+  padding-bottom: 1rem; /* Added padding for spacing */
+}
+
+.actions .button {
+  flex-grow: 1; /* Ensure "Order" button takes available space */
+  margin-left: 10px;
+}
+
+.actions .button-alt {
+  margin-right: 10px;
+  flex-grow: 1; /* Ensure "Close" button takes available space */
+}
+
