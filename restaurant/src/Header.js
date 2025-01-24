@@ -14,7 +14,7 @@ const Header = ({ onCartClick }) => {
   return (
     <>
       <header className="header">
-        <h1>ReactMeals</h1>
+        <h1>Foodie's Delight</h1>
         <button className="cart-button" onClick={onCartClick}>
           <span>Your Cart</span>
           <span className="cart-count">{numberOfCartItems}</span> 
