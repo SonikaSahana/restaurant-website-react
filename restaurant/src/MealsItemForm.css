@@ -1,48 +1,60 @@
+/* Container for the entire meal item */
+.meal-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+  margin: 1rem 0;
+}
 
-.meal-form {
-    display: flex;
-    align-items: center;
-  }
-  
- 
-  .form-control {
-    display: flex;
-    flex-direction: column;
-    margin-right: 1rem;
-  }
-  
-  .form-control label {
-    font-weight: bold;
-    margin-bottom: 0.25rem;
-    font-size: 0.9rem;
-    color: #8a2b06;
-  }
-  
-  .form-control input {
-    width: 3rem;
-    font: inherit;
-    padding: 0.25rem;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    color: #333;
-  }
-  
-  /* Add Button */
-  .meal-form button {
-    font: inherit;
-    cursor: pointer;
-    background-color: #8a2b06;
-    border: 1px solid #8a2b06;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    transition: background-color 0.2s, border-color 0.2s;
-  }
-  
-  .meal-form button:hover,
-  .meal-form button:active {
-    background-color: #641e03;
-    border-color: #641e03;
-  }
-  
+/* Container for the meal details */
+.meal-item > div {
+  max-width: 70%;
+}
+
+/* Style for the meal name */
+.meal-item h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #363636;
+}
+
+/* Style for the meal description */
+.meal-item p:nth-of-type(1) {
+  margin: 0.25rem 0;
+  font-style: italic;
+  color: #6d6d6d;
+}
+
+/* Style for the meal price */
+.meal-item p:nth-of-type(2) {
+  margin: 0.5rem 0;
+  font-weight: bold;
+  color: #8a2b06;
+}
+
+/* Style for the "+ Add" button */
+.meal-item button {
+  background-color: #8a2b06;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for the button */
+.meal-item button:hover {
+  background-color: #641e03;
+  transform: scale(1.05);
+}
+
+/* Active effect for the button (when clicked) */
+.meal-item button:active {
+  background-color: #4b1602;
+  transform: scale(1);
+}

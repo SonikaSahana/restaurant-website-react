@@ -1,26 +1,24 @@
-import React, { useState } from "react";
-import CartModal from './CartModal';
+import { CartProvider } from "./store/CartContext"; // Ensure the correct path
 import Header from "./Header";
 import Summary from "./Summary";
 import MealsList from "./MealsList";
+import CartModal from "./CartModal";
+import React, { useState } from "react";
 
 function App() {
-  const [isCartOpen, setIsCartOpen] = useState(false);  
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const toggleCart = () => {
-    setIsCartOpen(!isCartOpen);  
+    setIsCartOpen(!isCartOpen);
   };
 
   return (
-    <div>
-     
+    <CartProvider>
       <Header onCartClick={toggleCart} />
       <Summary />
       <MealsList />
-
-     
       {isCartOpen && <CartModal onClose={toggleCart} />}
-    </div>
+    </CartProvider>
   );
 }
 

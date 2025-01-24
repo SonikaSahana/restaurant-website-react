@@ -1,5 +1,5 @@
 import React from "react";
-import MealItemForm from "./MealsItemForm";
+import MealItem from "./MealsItemForm"; 
 import "./MealsList.css";
 
 const DUMMY_MEALS = [
@@ -14,14 +14,13 @@ const MealsList = () => {
     <section className="meals">
       <ul>
         {DUMMY_MEALS.map((meal) => (
-          <li key={meal.id} className="meal-item">
-            <div>
-              <h3>{meal.name}</h3>
-              <p className="description">{meal.description}</p>
-              <p className="price">${meal.price.toFixed(2)}</p>
-            </div>
-            <MealItemForm />
-          </li>
+          <MealItem
+            key={meal.id}
+            id={meal.id}
+            name={meal.name}
+            description={meal.description}
+            price={meal.price}
+          />
         ))}
       </ul>
     </section>
